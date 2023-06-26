@@ -2,36 +2,20 @@ package com.example.taskmanager;
 
 import java.time.LocalDate;
 
-public class Task {
-    private String title;
-    private String description;
-    private LocalDate dueDate;
-    private boolean completed;
+public class TaskManager {
+    public static void main(String[] args) {
+        // Create a Task instance
+        Task task = new Task("Sample Task", "This is a sample task", LocalDate.now());
 
-    public Task(String title, String description, LocalDate dueDate) {
-        this.title = title;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.completed = false;
-    }
+        // Perform operations on the task
+        System.out.println("Title: " + task.getTitle());
+        System.out.println("Description: " + task.getDescription());
+        System.out.println("Due Date: " + task.getDueDate());
+        System.out.println("Completed: " + task.isCompleted());
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public void markAsCompleted() {
-        this.completed = true;
+        // Mark the task as completed
+        task.markAsCompleted();
+        System.out.println("Marked as Completed: " + task.isCompleted());
     }
 }
+
